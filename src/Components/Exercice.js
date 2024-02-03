@@ -6,6 +6,7 @@ import doraAujourdhui from "./Videos/aujourdhui.mp4";
 import doraReviser from "./Videos/nous allons reviser.mp4";
 import { Link } from "react-router-dom";
 import "react-html5video/dist/styles.css";
+import Colors from "./Colors";
 
 const Exercice = () => {
   const [segment, setSegment] = useState(0);
@@ -48,12 +49,12 @@ const Exercice = () => {
   };
   const [audio] = useState(new Audio("/Happy Upbeat Background Music.mp3"));
   const [muteAudio, setMuteAudio] = useState(true);
-  useEffect(() => {
-    audio.loop = true;
-    audio.volume = 0.1;
-    audio.play();
-    return () => audio.pause(); // Cleanup when component unmounts
-  }, [audio]);
+  // useEffect(() => {
+  //   audio.loop = true;
+  //   audio.volume = 0.1;
+  //   audio.play();
+  //   return () => audio.pause(); // Cleanup when component unmounts
+  // }, [audio]);
   const handleMuteAudio = () => {
     setMuteAudio(!muteAudio);
     muteAudio ? setMuteAudio(audio.pause()) : audio.play();
@@ -61,6 +62,7 @@ const Exercice = () => {
 
   return (
     <div>
+    <Colors />
       <img
         onClick={handleSegment}
         className="nextButton"
@@ -109,7 +111,9 @@ const Exercice = () => {
         ) : (
           ""
         )}
-
+       
+    
+    
         <video
           style={{
             objectFit: "cover",
