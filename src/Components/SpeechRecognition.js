@@ -4,11 +4,11 @@ import { DotLoader } from "react-spinners";
 import "./Colors.css";
 import googleAssistantSound from "./Images/speechEffect.mp3";
 
-const SpeechRecognition = () => {
+const SpeechRecognition = ({starColor}) => {
   const [transcription, setTranscription] = useState("");
   const [isListening, setIsListening] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [starColor, setStarColor] = useState("jaune"); // Change this to the color of your star
+  
   const [audio] = useState(new Audio(googleAssistantSound));
   let recognition;
 

@@ -4,55 +4,88 @@
 }
 
 .Star {
-  width: 10%;
+  width: 100%;
   transition: 0.2s;
 }
 .Ball {
-  width: 10%;
+  width: 100%;
   transition: 0.2s;
 }
 .Rose {
-  width: 10%;
+  width: 100%;
   transition: 0.2s;
 }
 .Table {
-  width: 10%;
+  width: 100%;
   transition: 0.2s;
 }
 .Star:hover {
-    scale: 1.3;
-    transition: 0.2s;
-  }
-  .Ball:hover {
-    scale: 1.3;
-    transition: 0.2s;
-  }
-  .Rose:hover {
-    scale: 1.3;
-    transition: 0.2s;
-  }
-  .Table:hover {
-    scale: 1.3;
-    transition: 0.2s;
-  }
+  scale: 1.3;
+  transition: 0.2s;
+}
+.Ball:hover {
+  scale: 1.3;
+  transition: 0.2s;
+}
+.Rose:hover {
+  scale: 1.3;
+  transition: 0.2s;
+}
+.Table:hover {
+  scale: 1.3;
+  transition: 0.2s;
+}
 
+.circle-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #3498db; /* Change color as needed */
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
 
-  .circle-button {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #3498db; /* Change color as needed */
-    color: #fff;
-    font-size: 16px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
-  
-  .circle-button.listening {
-    background-color: #e74c3c; /* Change color as needed */
-  }
-  
-  .loader-container {
-    margin-top: 20px;
-  }
+.circle-button.listening {
+  background-color: #e74c3c; /* Change color as needed */
+}
+.result-container{
+  background-color: white;
+  border: solid black 3px;
+  border-radius: 10px;
+  padding: 30px;
+margin-top: -40%;
+margin-bottom: 15%;
+}
+.loader-container {
+  display: flex;
+}
+/* mic hover */
+.button-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.slide-icon {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  visibility: hidden;
+  opacity: 0;
+  transition: top 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s; /* Delay visibility to ensure it's hidden after opacity transition */
+}
+
+.svg-icon {
+  width: 100px;
+}
+
+.button-container:hover .slide-icon {
+  top: calc(100% - -100px); /* Adjust the distance from the button */
+  visibility: visible;
+  opacity: 1;
+  transition: top 0.3s ease, opacity 0.3s ease, visibility 0s;
+}

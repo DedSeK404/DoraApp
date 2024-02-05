@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import loopAnimation from "./Videos/DoraIdleAnimation.mp4";
 import doraBonjour from "./Videos/bonjours mes amis.mp4";
 import doraCommentCava from "./Videos/Comment ça va.mp4";
 import doraAujourdhui from "./Videos/aujourdhui.mp4";
-import doraReviser from "./Videos/nous allons reviser.mp4";
 import { Link } from "react-router-dom";
 import "react-html5video/dist/styles.css";
-import Colors from "./Colors";
+import exercice1Button from "./Images/exercice1button.svg";
 
 const Exercice = () => {
   const [segment, setSegment] = useState(0);
@@ -15,7 +14,6 @@ const Exercice = () => {
     doraBonjour,
     doraCommentCava,
     doraAujourdhui,
-    doraReviser,
   ];
 
   const handleSegment = () => {
@@ -62,7 +60,9 @@ const Exercice = () => {
 
   return (
     <div>
-    <Colors />
+      <Link to="/colorsExercice">
+        <img className="exerciceButton" src={exercice1Button} alt="0" />
+      </Link>
       <img
         onClick={handleSegment}
         className="nextButton"
@@ -111,9 +111,7 @@ const Exercice = () => {
         ) : (
           ""
         )}
-       
-    
-    
+
         <video
           style={{
             objectFit: "cover",
